@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(assets/background/370797.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#boardAndDigits {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #666;
+}
+
+.difficulty {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#display {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #666;
+}
+
+#stopButton {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#stopButton:hover {
+    background-color: #cc0000;
+}
+
+#errors {
+    font-size: 24px;
+    color: #f00;
+}
+
+/* Estilos para el tablero de Sudoku */
+#board {
+    background-image: url(assets/background/cuadrantes.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-gap: 2px; /* Espacio entre celdas */
+    justify-content: center;
+    align-content: center;
+}
+
+.tile {
+    width: 48px;
+    height: 48px;
+    border: 0.5px solid lightgray;
+    background-color: white;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.number-selected {
+    background-color: gray;
+}
+
+.tile-start {
+    width: 48px;
+    height: 48px;
+    border: 0.5px solid lightgray;
+    background-color: whitesmoke;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer {
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+
+
+
+#digits {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    justify-content: center;
+    width: 450px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.number {
+    width: 44px;
+    height: 44px;
+    border: 1px solid black;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

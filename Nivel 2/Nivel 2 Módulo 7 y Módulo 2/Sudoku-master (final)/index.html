@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="sudoku.css">
+    <script src="sudoku.js"></script>
+</head>
+<body>
+<div id="boardAndDigits">
+    <h1>SUDOKU</h1>
+    <h2>SELECCIONAR LA DIFICULTAD</h2>
+    <div class="difficulty">
+        <label>
+            <input type="radio" name="dificultad" value="2"> Fácil
+        </label>
+        <label>
+            <input type="radio" name="dificultad" value="4"> Medio
+        </label>
+        <label>
+            <input type="radio" name="dificultad" value="6"> Difícil
+        </label>
+    </div>
+    <button type="submit" id="comenzar">Comenzar</button>
+    <hr>
+    <p id="display">00:00:00</p>
+    <button id="stopButton">Detener</button>
+    <h2 id="errors">0</h2>
+    <div id="board"></div>
+    <br>
+    <br>
+    <div id="digits"></div>
+    <footer>
+        <p id="equipoIES">&copy; EQUIPO DE DESARROLLO IES 9-021 2023</p>
+    </footer>
+</div>
+
+        <script>
+            let running = false;
+            let startTime = 0;
+            let intervalId = null;
+    
+            const display = document.getElementById("display");
+            const startButton = document.getElementById("comenzar");
+            const stopButton = document.getElementById("stopButton");
+    
+            function formatTime(ms) {
+                const date = new Date(ms);
+                const hours = date.getUTCHours().toString().padStart(2, '0');
+                const minutes = date.getUTCMinutes().toString().padStart(2, '0');
+                const seconds = date.getUTCSeconds().toString().padStart(2, '0');
+                return `${hours}:${minutes}:${seconds}`;
+            }
+    
+            function updateDisplay() {
+                const currentTime = Date.now() - startTime;
+                display.textContent = formatTime(currentTime);
+            }
+    
+            startButton.addEventListener("click", () => {
+                if (!running) {
+                    startTime = Date.now() - (startTime > 0 ? startTime : 0); // Continuar desde el tiempo previo si existe
+                    intervalId = setInterval(updateDisplay, 1000);
+                    running = true;
+                }
+            });
+    
+            stopButton.addEventListener("click", () => {
+                if (running) {
+                    clearInterval(intervalId);
+                    running = false;
+                }
+            });
+        </script>
+    </body>
+</html>

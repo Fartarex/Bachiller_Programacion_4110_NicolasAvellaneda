@@ -1,0 +1,32 @@
+body{  /* Este es el estilo que se le da a todo el CUERPO de la página */
+
+    background-color: rgb(255, 98, 0); /* FONDO de color */
+
+    font-family: 'Roboto', sans-serif; /* ESTILO de texto */
+
+}
+
+h1,h2,h3,h4,h5,h6{ /* De esta manera podemos seleccionar más de un título */
+
+    text-align: center; /* De esta manera CENTRAMOS texto */
+
+}
+
+img{ /* De esta manera centramos una imagen */
+    display: block;
+    margin: auto;
+    width: 20%;
+}
+
+
+
+/* Con # seleccionamos un ID */
+#divID{
+    background-color: rgb(93, 83, 83);
+}
+
+
+.párrafo{
+    color: white; /* Cambiamos el COLOR de la letra */
+    font-size: 30px; /* De esta manera modificamos el TAMAÑO de la letra */
+}
